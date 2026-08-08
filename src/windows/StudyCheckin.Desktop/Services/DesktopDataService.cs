@@ -1,3 +1,4 @@
+using System.IO;
 using StudyCheckin.Core;
 
 namespace StudyCheckin.Desktop.Services;
@@ -151,4 +152,3 @@ public sealed class DesktopDataService
         }
     };
 }
-

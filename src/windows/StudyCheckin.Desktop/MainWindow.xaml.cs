@@ -1,14 +1,19 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Drawing;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
 using System.Windows.Threading;
 using Microsoft.Win32;
 using StudyCheckin.Core;
 using StudyCheckin.Desktop.Services;
+using Application = System.Windows.Application;
+using Button = System.Windows.Controls.Button;
+using CheckBox = System.Windows.Controls.CheckBox;
 using Forms = System.Windows.Forms;
+using MessageBox = System.Windows.MessageBox;
+using OpenFileDialog = Microsoft.Win32.OpenFileDialog;
+using TextBox = System.Windows.Controls.TextBox;
 
 namespace StudyCheckin.Desktop;
 
@@ -372,7 +377,7 @@ public partial class MainWindow : Window
 
         var icon = new Forms.NotifyIcon
         {
-            Icon = SystemIcons.Information,
+            Icon = System.Drawing.SystemIcons.Information,
             Text = "自律台",
             Visible = true,
             ContextMenuStrip = menu
@@ -423,7 +428,7 @@ public sealed class TaskDisplayItem
     public string Id { get; init; } = string.Empty;
     public string Title { get; init; } = string.Empty;
     public string CategoryLabel { get; init; } = string.Empty;
-    public Brush CategoryBrush { get; init; } = Brushes.Gray;
+    public System.Windows.Media.Brush CategoryBrush { get; init; } = System.Windows.Media.Brushes.Gray;
     public int ActualMinutes { get; init; }
     public bool IsCompleted { get; init; }
     public bool CanInteract { get; init; }
@@ -468,18 +473,18 @@ public sealed class TaskDisplayItem
         };
     }
 
-    private static Brush CategoryBrushFor(StudyTaskCategory category, bool paused)
+    private static System.Windows.Media.Brush CategoryBrushFor(StudyTaskCategory category, bool paused)
     {
-        if (paused) return new SolidColorBrush(Color.FromRgb(142, 151, 154));
+        if (paused) return new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(142, 151, 154));
         var color = category switch
         {
-            StudyTaskCategory.Mathematics => Color.FromRgb(23, 107, 104),
-            StudyTaskCategory.English => Color.FromRgb(52, 91, 146),
-            StudyTaskCategory.SignalSystems843 => Color.FromRgb(122, 71, 117),
-            StudyTaskCategory.Competition => Color.FromRgb(198, 144, 43),
-            StudyTaskCategory.Coursework => Color.FromRgb(74, 105, 83),
-            _ => Color.FromRgb(96, 112, 120)
+            StudyTaskCategory.Mathematics => System.Windows.Media.Color.FromRgb(23, 107, 104),
+            StudyTaskCategory.English => System.Windows.Media.Color.FromRgb(52, 91, 146),
+            StudyTaskCategory.SignalSystems843 => System.Windows.Media.Color.FromRgb(122, 71, 117),
+            StudyTaskCategory.Competition => System.Windows.Media.Color.FromRgb(198, 144, 43),
+            StudyTaskCategory.Coursework => System.Windows.Media.Color.FromRgb(74, 105, 83),
+            _ => System.Windows.Media.Color.FromRgb(96, 112, 120)
         };
-        return new SolidColorBrush(color);
+        return new System.Windows.Media.SolidColorBrush(color);
     }
 }

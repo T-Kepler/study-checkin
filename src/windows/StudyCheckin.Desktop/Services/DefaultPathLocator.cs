@@ -1,3 +1,5 @@
+using System.IO;
+
 namespace StudyCheckin.Desktop.Services;
 
 public static class DefaultPathLocator
@@ -23,4 +25,3 @@ public static class DefaultPathLocator
         }
     }
 }
-

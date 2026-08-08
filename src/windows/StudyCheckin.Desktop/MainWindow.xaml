@@ -157,7 +157,7 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="42" />
                         </Grid.ColumnDefinitions>
-                        <TextBox x:Name="ExcelPathBox" IsReadOnly="True" TextTrimming="CharacterEllipsis" ToolTip="规划 Excel 路径" />
+                        <TextBox x:Name="ExcelPathBox" IsReadOnly="True" ToolTip="规划 Excel 路径" />
                         <Button Grid.Column="1" Style="{StaticResource IconButton}" Content="&#xE8B7;" ToolTip="选择 Excel"
                                 Margin="6,0,0,0" Click="BrowseExcel_Click" />
                     </Grid>
@@ -181,4 +181,3 @@
         </Border>
     </Grid>
 </Window>
-
