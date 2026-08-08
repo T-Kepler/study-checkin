@@ -1,0 +1,35 @@
+# .NET build output
+**/bin/
+**/obj/
+*.user
+*.suo
+.vs/
+
+# Packaged artifacts
+dist/
+publish/
+
+# WeChat developer-specific files
+src/miniprogram/project.private.config.json
+src/miniprogram/.env*
+
+# Cloud and local secrets
+.env
+.env.*
+!.env.example
+secrets.json
+**/local.settings.json
+
+# Local user data and logs
+data/
+logs/
+*.log
+*.tmp
+*.bak
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
