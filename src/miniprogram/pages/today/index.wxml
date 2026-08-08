@@ -1,7 +1,7 @@
 <view class="page">
   <view class="top-band">
     <view class="today-head">
-      <view>
+      <view class="today-copy">
         <view class="eyebrow">{{syncLabel}} · {{phaseLabel}}</view>
         <view class="page-title">{{dateLabel}}</view>
         <view class="page-subtitle">{{weekday}} · {{statusLabel}}</view>

@@ -10,10 +10,19 @@
 
 .date-controls {
   display: flex;
-  gap: 12rpx;
+  flex: 0 0 auto;
+  justify-content: space-between;
+  width: 148rpx;
+}
+
+.today-copy {
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .nav-button {
+  box-sizing: border-box;
+  flex: 0 0 68rpx;
   width: 68rpx;
   height: 68rpx;
   margin: 0;
@@ -91,8 +100,9 @@
 }
 
 .task-row {
-  display: grid;
-  grid-template-columns: 72rpx 8rpx minmax(0, 1fr);
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
   gap: 14rpx;
   padding: 28rpx 0;
   border-bottom: 1rpx solid var(--line);
@@ -104,6 +114,8 @@
 
 .check-button {
   align-self: start;
+  box-sizing: border-box;
+  flex: 0 0 64rpx;
   width: 64rpx;
   height: 64rpx;
   margin: 4rpx 0 0;
@@ -121,12 +133,15 @@
 }
 
 .task-accent {
+  align-self: stretch;
+  flex: 0 0 8rpx;
   min-height: 92rpx;
   border-radius: 2rpx;
   background: var(--muted);
 }
 
 .task-main {
+  flex: 1 1 0;
   min-width: 0;
 }
 
@@ -172,7 +187,7 @@
   font-size: 28rpx;
   font-weight: 500;
   line-height: 1.55;
-  word-break: break-all;
+  overflow-wrap: break-word;
 }
 
 .timer-detail {
@@ -182,12 +197,12 @@
 }
 
 .task-actions {
-  grid-column: 3;
   display: flex;
+  flex: 1 0 calc(100% - 94rpx);
   align-items: center;
   justify-content: space-between;
   gap: 16rpx;
-  margin-top: 18rpx;
+  margin: 18rpx 0 0 94rpx;
 }
 
 .minutes-control {
