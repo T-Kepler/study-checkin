@@ -7,7 +7,8 @@
 - Windows WPF 客户端：可用
 - Excel 导入与回写：可用，只更新 `每日执行_2026` 的 K、M、N 列
 - 本地 Mock 同步与失败重试：可用
-- 微信小程序、CloudBase、WxPusher：待接入
+- 微信小程序本地 Mock 版：可用
+- CloudBase、WxPusher：待部署
 
 ## 直接运行
 
@@ -21,12 +22,17 @@ dist\StudyCheckin.exe
 
 详细操作见 [Windows 使用指南](docs/user-guide.md)。
 
+微信小程序 Mock 版位于 `src\miniprogram`，导入方法见 [小程序 Mock 使用指南](docs/miniprogram-mock-guide.md)。
+
 ## 开发与验证
 
 ```powershell
 dotnet build StudyCheckin.sln --configuration Release
 dotnet run --project tests\StudyCheckin.Core.Tests\StudyCheckin.Core.Tests.csproj --configuration Release
 dotnet run --project tests\StudyCheckin.Desktop.IntegrationTests\StudyCheckin.Desktop.IntegrationTests.csproj --configuration Release -- "D:\.日常\大三上\规划\2028考研_竞赛_课程详细规划.xlsx"
+node tests\miniprogram\domain.test.js
+node tests\miniprogram\service.test.js
+node scripts\validate-miniprogram.js
 powershell -ExecutionPolicy Bypass -File scripts\publish-windows.ps1
 ```
 

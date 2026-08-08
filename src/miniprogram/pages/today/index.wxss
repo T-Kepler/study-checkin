@@ -1,0 +1,262 @@
+.today-head,
+.progress-topline,
+.task-heading-row,
+.sync-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24rpx;
+}
+
+.date-controls {
+  display: flex;
+  gap: 12rpx;
+}
+
+.nav-button {
+  width: 68rpx;
+  height: 68rpx;
+  margin: 0;
+  padding: 0;
+  border: 1rpx solid #45575f;
+  background: transparent;
+  color: #fff;
+  font-size: 48rpx;
+  line-height: 62rpx;
+}
+
+.nav-button[disabled] {
+  color: #66777e;
+  opacity: 0.55;
+}
+
+.progress-band {
+  padding: 28rpx 32rpx 30rpx;
+  background: #fff;
+}
+
+.progress-number {
+  margin-right: 16rpx;
+  font-size: 42rpx;
+  font-weight: 700;
+}
+
+.progress-status {
+  color: var(--teal);
+  font-size: 24rpx;
+  font-weight: 600;
+}
+
+.hours {
+  color: var(--muted);
+  font-size: 23rpx;
+}
+
+.progress-track {
+  height: 12rpx;
+  margin-top: 20rpx;
+  overflow: hidden;
+  background: #d9e2df;
+  border-radius: 2rpx;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--teal);
+  transition: width 220ms ease-out;
+}
+
+.course-band {
+  padding: 24rpx 32rpx;
+  border-top: 1rpx solid var(--line);
+  border-bottom: 1rpx solid var(--line);
+  background: #edf1ef;
+}
+
+.course-label {
+  color: var(--gold);
+  font-size: 22rpx;
+  font-weight: 700;
+}
+
+.course-text {
+  margin-top: 8rpx;
+  font-size: 25rpx;
+  line-height: 1.65;
+}
+
+.task-section {
+  padding-bottom: 0;
+  background: #fff;
+}
+
+.task-row {
+  display: grid;
+  grid-template-columns: 72rpx 8rpx minmax(0, 1fr);
+  gap: 14rpx;
+  padding: 28rpx 0;
+  border-bottom: 1rpx solid var(--line);
+}
+
+.task-paused {
+  opacity: 0.52;
+}
+
+.check-button {
+  align-self: start;
+  width: 64rpx;
+  height: 64rpx;
+  margin: 4rpx 0 0;
+  padding: 0;
+  border: 2rpx solid #8fa0a7;
+  background: #fff;
+  color: #fff;
+  font-size: 34rpx;
+  line-height: 60rpx;
+}
+
+.check-button.is-complete {
+  border-color: var(--teal);
+  background: var(--teal);
+}
+
+.task-accent {
+  min-height: 92rpx;
+  border-radius: 2rpx;
+  background: var(--muted);
+}
+
+.task-main {
+  min-width: 0;
+}
+
+.task-category {
+  color: var(--teal);
+  font-size: 21rpx;
+  font-weight: 700;
+}
+
+.category-mathematics {
+  color: #176b68;
+}
+
+.category-english {
+  color: #345b92;
+}
+
+.category-signalSystems843 {
+  color: #7a4775;
+}
+
+.category-competition {
+  color: #a76d00;
+}
+
+.category-coursework {
+  color: #4a6953;
+}
+
+.category-temporary {
+  color: #607078;
+}
+
+.task-accent.category-mathematics { background: #176b68; }
+.task-accent.category-english { background: #345b92; }
+.task-accent.category-signalSystems843 { background: #7a4775; }
+.task-accent.category-competition { background: #c6902b; }
+.task-accent.category-coursework { background: #4a6953; }
+.task-accent.category-temporary { background: #607078; }
+
+.task-title {
+  margin-top: 5rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  line-height: 1.55;
+  word-break: break-all;
+}
+
+.timer-detail {
+  margin-top: 8rpx;
+  color: #7a5a1f;
+  font-size: 22rpx;
+}
+
+.task-actions {
+  grid-column: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16rpx;
+  margin-top: 18rpx;
+}
+
+.minutes-control {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+  color: var(--muted);
+  font-size: 23rpx;
+}
+
+.minutes-input {
+  width: 104rpx;
+  height: 64rpx;
+  border: 1rpx solid var(--line);
+  border-radius: 4rpx;
+  background: var(--paper);
+  text-align: center;
+}
+
+.timer-button {
+  min-width: 154rpx;
+  height: 68rpx;
+  margin: 0;
+  padding: 0 22rpx;
+  background: var(--teal);
+  color: #fff;
+  font-size: 25rpx;
+  line-height: 68rpx;
+}
+
+.timer-button.is-running {
+  background: #9e4438;
+}
+
+.timer-symbol {
+  margin-right: 12rpx;
+  font-size: 20rpx;
+}
+
+.recap-section {
+  background: var(--paper);
+}
+
+.recap-field {
+  width: 100%;
+  height: 210rpx;
+  margin-top: 18rpx;
+  padding: 20rpx;
+  border: 1rpx solid var(--line);
+  border-radius: 4rpx;
+  background: #fff;
+  line-height: 1.6;
+}
+
+.recap-save {
+  margin-top: 18rpx;
+}
+
+.sync-footer {
+  padding: 22rpx 32rpx;
+  border-top: 1rpx solid var(--line);
+  color: var(--muted);
+  font-size: 22rpx;
+}
+
+.pending {
+  color: var(--danger);
+}
+
+.synced {
+  color: #4a6953;
+}

@@ -1,0 +1,118 @@
+.range-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12rpx;
+  padding: 20rpx 32rpx;
+  border-bottom: 1rpx solid var(--line);
+  background: #fff;
+}
+
+.range-button {
+  height: 64rpx;
+  margin: 0;
+  padding: 0;
+  border: 1rpx solid var(--line);
+  background: #fff;
+  color: var(--muted);
+  font-size: 23rpx;
+  line-height: 62rpx;
+}
+
+.range-button.is-active {
+  border-color: var(--teal);
+  background: var(--teal-soft);
+  color: var(--teal);
+  font-weight: 600;
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: #fff;
+}
+
+.metric-item {
+  min-height: 176rpx;
+  padding: 28rpx 32rpx;
+  border-right: 1rpx solid var(--line);
+  border-bottom: 1rpx solid var(--line);
+}
+
+.metric-item:nth-child(3) {
+  grid-column: 1 / 3;
+  border-right: 0;
+}
+
+.metric-label,
+.metric-note {
+  color: var(--muted);
+  font-size: 22rpx;
+}
+
+.metric-value {
+  margin: 8rpx 0 5rpx;
+  font-size: 48rpx;
+  font-weight: 700;
+}
+
+.metric-value text {
+  margin-left: 4rpx;
+  color: var(--teal);
+  font-size: 25rpx;
+}
+
+.trend-section,
+.category-section {
+  background: #fff;
+}
+
+.trend-row {
+  display: grid;
+  grid-template-columns: 92rpx minmax(0, 1fr) 72rpx;
+  align-items: center;
+  gap: 16rpx;
+  margin-top: 22rpx;
+}
+
+.trend-date,
+.trend-value {
+  color: var(--muted);
+  font-size: 22rpx;
+}
+
+.trend-value {
+  text-align: right;
+}
+
+.trend-track,
+.category-track {
+  height: 12rpx;
+  overflow: hidden;
+  background: #d9e2df;
+  border-radius: 2rpx;
+}
+
+.trend-fill,
+.category-fill {
+  height: 100%;
+  background: var(--teal);
+}
+
+.category-row {
+  margin-top: 26rpx;
+}
+
+.category-topline {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10rpx;
+  color: var(--muted);
+  font-size: 23rpx;
+}
+
+.category-mathematics { background: #176b68; }
+.category-english { background: #345b92; }
+.category-signalSystems843 { background: #7a4775; }
+.category-competition { background: #c6902b; }
+.category-coursework { background: #4a6953; }
+.category-temporary { background: #607078; }

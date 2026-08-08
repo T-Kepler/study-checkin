@@ -1,0 +1,86 @@
+<view class="page">
+  <view class="top-band">
+    <view class="today-head">
+      <view>
+        <view class="eyebrow">{{syncLabel}} · {{phaseLabel}}</view>
+        <view class="page-title">{{dateLabel}}</view>
+        <view class="page-subtitle">{{weekday}} · {{statusLabel}}</view>
+      </view>
+      <view class="date-controls">
+        <button class="nav-button" disabled="{{!hasPrevious}}" bindtap="onPreviousDay" aria-label="前一天">‹</button>
+        <button class="nav-button" disabled="{{!hasNext}}" bindtap="onNextDay" aria-label="后一天">›</button>
+      </view>
+    </view>
+  </view>
+
+  <block wx:if="{{day}}">
+    <view class="progress-band">
+      <view class="progress-topline">
+        <view>
+          <text class="progress-number">{{progressPercent}}%</text>
+          <text class="progress-status">{{statusLabel}}</text>
+        </view>
+        <text class="hours">{{actualHours}} / {{plannedHours}} 小时</text>
+      </view>
+      <view class="progress-track">
+        <view class="progress-fill" style="width: {{progressPercent}}%;"></view>
+      </view>
+    </view>
+
+    <view class="course-band">
+      <view class="course-label">今日课程</view>
+      <view class="course-text">{{day.courses || '无固定课'}}</view>
+    </view>
+
+    <view class="section task-section">
+      <view class="task-heading-row">
+        <view>
+          <view class="section-heading">学习任务</view>
+          <view class="section-caption">{{tasks.length}} 项</view>
+        </view>
+        <button class="text-button" bindtap="onAddTemporaryTask">＋ 临时任务</button>
+      </view>
+
+      <view wx:if="{{tasks.length === 0}}" class="empty-state">当天没有安排任务</view>
+      <view wx:for="{{tasks}}" wx:key="id" class="task-row {{item.isPaused ? 'task-paused' : ''}}">
+        <button class="check-button {{item.isCompleted ? 'is-complete' : ''}}"
+                data-id="{{item.id}}" bindtap="onToggleTask" disabled="{{item.isPaused}}"
+                aria-label="{{item.isCompleted ? '取消完成' : '完成任务'}}">{{item.isCompleted ? '✓' : ''}}</button>
+        <view class="task-accent {{item.categoryClass}}"></view>
+        <view class="task-main">
+          <view class="task-category {{item.categoryClass}}">{{item.isPaused ? '已暂停' : item.categoryLabel}}</view>
+          <view class="task-title">{{item.title}}</view>
+          <view wx:if="{{item.timerLabel}}" class="timer-detail">{{item.timerLabel}}</view>
+        </view>
+        <view class="task-actions">
+          <view class="minutes-control">
+            <input class="minutes-input" type="number" value="{{item.actualMinutes}}"
+                   data-id="{{item.id}}" bindblur="onMinutesBlur" disabled="{{item.isPaused}}" />
+            <text>分</text>
+          </view>
+          <button class="timer-button {{item.startedAtUtc ? 'is-running' : ''}}"
+                  data-id="{{item.id}}" bindtap="onTimerAction"
+                  disabled="{{!item.canStart && !item.startedAtUtc}}">
+            <text class="timer-symbol">{{item.timerSymbol}}</text>
+            <text>{{item.timerAction}}</text>
+          </button>
+        </view>
+      </view>
+    </view>
+
+    <view class="section recap-section">
+      <view class="section-heading">当日复盘</view>
+      <textarea class="recap-field" value="{{recapDraft}}" bindinput="onRecapInput"
+                maxlength="300" placeholder="写下今天最值得保留的一点" />
+      <button class="primary-button recap-save" bindtap="onSaveRecap">保存并同步</button>
+    </view>
+
+    <view class="sync-footer">
+      <text><text class="status-dot"></text>{{syncLabel}}</text>
+      <text wx:if="{{pendingCount > 0}}" class="pending">{{pendingCount}} 项等待同步</text>
+      <text wx:else class="synced">本地记录已保存</text>
+    </view>
+  </block>
+
+  <view wx:elif="{{!loading}}" class="empty-state">当前规划中没有可显示的日期</view>
+</view>

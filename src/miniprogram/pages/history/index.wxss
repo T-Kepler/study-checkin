@@ -1,0 +1,121 @@
+.history-head {
+  padding-bottom: 38rpx;
+}
+
+.filter-strip {
+  box-sizing: border-box;
+  width: 100%;
+  border-bottom: 1rpx solid var(--line);
+  background: #fff;
+  white-space: nowrap;
+}
+
+.filter-row {
+  display: inline-flex;
+  gap: 12rpx;
+  padding: 18rpx 32rpx;
+}
+
+.filter-button {
+  min-width: 130rpx;
+  height: 64rpx;
+  margin: 0;
+  padding: 0 22rpx;
+  border: 1rpx solid var(--line);
+  background: #fff;
+  color: var(--muted);
+  font-size: 24rpx;
+  line-height: 62rpx;
+}
+
+.filter-button.is-active {
+  border-color: var(--teal);
+  background: var(--teal-soft);
+  color: var(--teal);
+  font-weight: 600;
+}
+
+.history-list {
+  background: #fff;
+}
+
+.day-row {
+  width: 100%;
+  margin: 0;
+  padding: 28rpx 32rpx;
+  border-bottom: 1rpx solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  text-align: left;
+  line-height: 1.4;
+}
+
+.day-topline,
+.day-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18rpx;
+}
+
+.day-date {
+  font-size: 30rpx;
+  font-weight: 700;
+}
+
+.day-phase {
+  margin-top: 5rpx;
+  color: var(--gold);
+  font-size: 22rpx;
+  font-weight: 600;
+}
+
+.day-percent {
+  color: var(--ink);
+  font-size: 36rpx;
+  font-weight: 700;
+}
+
+.day-course {
+  display: -webkit-box;
+  margin-top: 16rpx;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 23rpx;
+  line-height: 1.5;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.day-progress {
+  height: 8rpx;
+  margin-top: 18rpx;
+  overflow: hidden;
+  background: #d9e2df;
+  border-radius: 2rpx;
+}
+
+.day-progress-fill {
+  height: 100%;
+  background: var(--teal);
+}
+
+.day-meta {
+  margin-top: 16rpx;
+  color: var(--muted);
+  font-size: 21rpx;
+}
+
+.status-completed {
+  color: var(--teal);
+  font-weight: 600;
+}
+
+.status-inProgress {
+  color: #a76d00;
+  font-weight: 600;
+}
+
+.status-notStarted {
+  color: var(--muted);
+}

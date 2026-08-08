@@ -1,0 +1,82 @@
+<view class="page">
+  <view class="top-band">
+    <view class="eyebrow">连接与提醒</view>
+    <view class="page-title">设置</view>
+    <view class="page-subtitle">本地数据、设备与消息渠道</view>
+  </view>
+
+  <view class="connection-strip">
+    <view>
+      <view class="connection-title"><text class="status-dot"></text>{{mode === 'cloud' ? 'CloudBase' : '本地 Mock'}}</view>
+      <view class="connection-meta">最近同步：{{lastSyncedLabel}}</view>
+    </view>
+    <view class="pending-count">{{pendingCount}} 项待同步</view>
+  </view>
+
+  <view class="section settings-section">
+    <view class="section-heading">云端模式</view>
+    <view class="setting-row block-row">
+      <view class="setting-label">CloudBase 环境 ID</view>
+      <input class="field" value="{{cloudEnvId}}" bindinput="onCloudEnvInput" placeholder="例如 cloud1-xxxx" />
+      <button class="secondary-button compact-button" bindtap="onSaveCloudEnv">保存环境 ID</button>
+    </view>
+    <view class="setting-row">
+      <view>
+        <view class="setting-label">使用 CloudBase</view>
+      </view>
+      <switch checked="{{mode === 'cloud'}}" color="#176B68" bindchange="onModeChange" />
+    </view>
+  </view>
+
+  <view class="section settings-section">
+    <view class="section-heading">配对 Windows</view>
+    <view wx:if="{{pairedDeviceName}}" class="paired-device">
+      <view class="paired-symbol">✓</view>
+      <view>
+        <view class="setting-label">{{pairedDeviceName}}</view>
+        <view class="setting-note">设备已配对</view>
+      </view>
+    </view>
+    <view class="pair-row">
+      <input class="field pair-input" type="number" maxlength="6" value="{{pairCode}}"
+             bindinput="onPairCodeInput" placeholder="000000" />
+      <button class="primary-button pair-button" bindtap="onPairDevice">配对</button>
+    </view>
+  </view>
+
+  <view class="section settings-section">
+    <view class="section-heading">微信提醒</view>
+    <view class="setting-row block-row">
+      <view class="setting-label">WxPusher UID</view>
+      <input class="field" value="{{wxPusherUid}}" bindinput="onWxPusherInput" placeholder="UID_xxxxxxxxx" />
+    </view>
+    <view class="setting-row">
+      <view>
+        <view class="setting-label">启用提醒</view>
+      </view>
+      <switch checked="{{remindersEnabled}}" color="#176B68" bindchange="onReminderToggle" />
+    </view>
+
+    <picker mode="time" value="{{morningPlanTime}}" data-field="morningPlanTime" bindchange="onTimeChange">
+      <view class="time-row"><text>晨间计划</text><text>{{morningPlanTime}} ›</text></view>
+    </picker>
+    <picker mode="time" value="{{startNudgeTime}}" data-field="startNudgeTime" bindchange="onTimeChange">
+      <view class="time-row"><text>开始提醒</text><text>{{startNudgeTime}} ›</text></view>
+    </picker>
+    <picker mode="time" value="{{incompleteNudgeTime}}" data-field="incompleteNudgeTime" bindchange="onTimeChange">
+      <view class="time-row"><text>未完成提醒</text><text>{{incompleteNudgeTime}} ›</text></view>
+    </picker>
+    <picker mode="time" value="{{weeklyReviewTime}}" data-field="weeklyReviewTime" bindchange="onTimeChange">
+      <view class="time-row"><text>周日复盘</text><text>{{weeklyReviewTime}} ›</text></view>
+    </picker>
+    <button class="primary-button save-settings" bindtap="onSaveReminderSettings">保存提醒设置</button>
+  </view>
+
+  <view class="section maintenance-section">
+    <view class="section-heading">同步维护</view>
+    <view class="maintenance-actions">
+      <button class="secondary-button" bindtap="onRetry">重试待同步项</button>
+      <button class="danger-button" bindtap="onResetMock">重置 Mock 数据</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,56 @@
+<view class="page">
+  <view class="top-band">
+    <view class="eyebrow">趋势与投入</view>
+    <view class="page-title">学习统计</view>
+    <view class="page-subtitle">任务完成率与实际投入</view>
+  </view>
+
+  <view class="range-row">
+    <button wx:for="{{ranges}}" wx:key="key"
+            class="range-button {{activeRange === item.key ? 'is-active' : ''}}"
+            data-key="{{item.key}}" bindtap="onRangeTap">{{item.label}}</button>
+  </view>
+
+  <view class="metric-grid">
+    <view class="metric-item">
+      <view class="metric-label">实际投入</view>
+      <view class="metric-value">{{actualHours}}<text>h</text></view>
+      <view class="metric-note">计划 {{plannedHours}}h</view>
+    </view>
+    <view class="metric-item">
+      <view class="metric-label">任务完成</view>
+      <view class="metric-value">{{taskRate}}<text>%</text></view>
+      <view class="metric-note">{{completedTasks}} / {{activeTasks}} 项</view>
+    </view>
+    <view class="metric-item">
+      <view class="metric-label">时长达成</view>
+      <view class="metric-value">{{hourRate}}<text>%</text></view>
+      <view class="metric-note">按计划小时计算</view>
+    </view>
+  </view>
+
+  <view class="section trend-section">
+    <view class="section-heading">每日达成</view>
+    <view wx:if="{{dailyRows.length === 0}}" class="empty-state">暂无统计数据</view>
+    <view wx:for="{{dailyRows}}" wx:key="date" class="trend-row">
+      <text class="trend-date">{{item.date}}</text>
+      <view class="trend-track">
+        <view class="trend-fill" style="width: {{item.percent}}%;"></view>
+      </view>
+      <text class="trend-value">{{item.percent}}%</text>
+    </view>
+  </view>
+
+  <view class="section category-section">
+    <view class="section-heading">计划结构</view>
+    <view wx:for="{{categories}}" wx:key="key" class="category-row">
+      <view class="category-topline">
+        <text>{{item.label}}</text>
+        <text>{{item.actualHours}} / {{item.plannedHours}}h</text>
+      </view>
+      <view class="category-track">
+        <view class="category-fill category-{{item.key}}" style="width: {{item.width}}%;"></view>
+      </view>
+    </view>
+  </view>
+</view>

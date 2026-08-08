@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/today/index",
+    "pages/history/index",
+    "pages/statistics/index",
+    "pages/settings/index"
+  ],
+  "window": {
+    "backgroundColor": "#F4F6F5",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#1C2B33",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "自律台"
+  },
+  "tabBar": {
+    "backgroundColor": "#FCFDFC",
+    "borderStyle": "black",
+    "color": "#607078",
+    "selectedColor": "#176B68",
+    "list": [
+      {
+        "pagePath": "pages/today/index",
+        "text": "今日",
+        "iconPath": "assets/tabs/today.png",
+        "selectedIconPath": "assets/tabs/today-active.png"
+      },
+      {
+        "pagePath": "pages/history/index",
+        "text": "历史",
+        "iconPath": "assets/tabs/history.png",
+        "selectedIconPath": "assets/tabs/history-active.png"
+      },
+      {
+        "pagePath": "pages/statistics/index",
+        "text": "统计",
+        "iconPath": "assets/tabs/statistics.png",
+        "selectedIconPath": "assets/tabs/statistics-active.png"
+      },
+      {
+        "pagePath": "pages/settings/index",
+        "text": "设置",
+        "iconPath": "assets/tabs/settings.png",
+        "selectedIconPath": "assets/tabs/settings-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

@@ -1,0 +1,136 @@
+page {
+  --ink: #1c2b33;
+  --muted: #607078;
+  --teal: #176b68;
+  --teal-soft: #dcebea;
+  --gold: #c6902b;
+  --paper: #f4f6f5;
+  --line: #dce3e1;
+  --danger: #b34a3c;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 28rpx;
+  letter-spacing: 0;
+}
+
+button {
+  border-radius: 6rpx;
+  font-size: 28rpx;
+  letter-spacing: 0;
+}
+
+button::after {
+  border: 0;
+}
+
+input,
+textarea {
+  box-sizing: border-box;
+}
+
+.page {
+  min-height: 100vh;
+  padding-bottom: calc(40rpx + env(safe-area-inset-bottom));
+}
+
+.top-band {
+  background: var(--ink);
+  color: #fff;
+  padding: 36rpx 32rpx 32rpx;
+}
+
+.eyebrow {
+  color: #8fbab4;
+  font-size: 22rpx;
+  font-weight: 600;
+}
+
+.page-title {
+  margin-top: 8rpx;
+  font-size: 44rpx;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.page-subtitle {
+  margin-top: 10rpx;
+  color: #bdc8cc;
+  font-size: 24rpx;
+  line-height: 1.55;
+}
+
+.section {
+  padding: 30rpx 32rpx;
+}
+
+.section + .section {
+  border-top: 1rpx solid var(--line);
+}
+
+.section-heading {
+  font-size: 30rpx;
+  font-weight: 700;
+}
+
+.section-caption {
+  margin-top: 8rpx;
+  color: var(--muted);
+  font-size: 23rpx;
+  line-height: 1.5;
+}
+
+.primary-button {
+  min-height: 80rpx;
+  padding: 0 28rpx;
+  background: var(--teal);
+  color: #fff;
+  font-weight: 600;
+  line-height: 80rpx;
+}
+
+.secondary-button {
+  min-height: 72rpx;
+  padding: 0 24rpx;
+  border: 1rpx solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  line-height: 72rpx;
+}
+
+.text-button {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--teal);
+  font-size: 25rpx;
+  line-height: 1.4;
+}
+
+.field {
+  width: 100%;
+  min-height: 76rpx;
+  padding: 18rpx 20rpx;
+  border: 1rpx solid var(--line);
+  border-radius: 4rpx;
+  background: #fff;
+}
+
+.empty-state {
+  padding: 88rpx 32rpx;
+  color: var(--muted);
+  text-align: center;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 12rpx;
+  height: 12rpx;
+  margin-right: 10rpx;
+  border-radius: 50%;
+  background: var(--teal);
+}
+
+.safe-bottom {
+  height: env(safe-area-inset-bottom);
+}

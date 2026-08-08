@@ -1,0 +1,124 @@
+.connection-strip,
+.setting-row,
+.paired-device,
+.pair-row,
+.time-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22rpx;
+}
+
+.connection-strip {
+  padding: 24rpx 32rpx;
+  border-bottom: 1rpx solid var(--line);
+  background: #edf1ef;
+}
+
+.connection-title,
+.setting-label {
+  font-weight: 600;
+}
+
+.connection-meta,
+.setting-note {
+  margin-top: 6rpx;
+  color: var(--muted);
+  font-size: 22rpx;
+  line-height: 1.5;
+}
+
+.pending-count {
+  color: var(--danger);
+  font-size: 22rpx;
+}
+
+.settings-section,
+.maintenance-section {
+  background: #fff;
+}
+
+.setting-row {
+  min-height: 92rpx;
+  margin-top: 20rpx;
+  padding: 12rpx 0;
+  border-bottom: 1rpx solid var(--line);
+}
+
+.block-row {
+  display: block;
+}
+
+.block-row .field {
+  margin-top: 14rpx;
+}
+
+.compact-button {
+  width: 100%;
+  margin-top: 12rpx;
+}
+
+.paired-device {
+  justify-content: flex-start;
+  margin-top: 22rpx;
+  padding: 20rpx;
+  background: var(--teal-soft);
+}
+
+.paired-symbol {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  background: var(--teal);
+  color: #fff;
+  font-weight: 700;
+  line-height: 50rpx;
+  text-align: center;
+}
+
+.pair-row {
+  margin-top: 20rpx;
+}
+
+.pair-input {
+  flex: 1;
+  font-size: 34rpx;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.pair-button {
+  width: 180rpx;
+  margin: 0;
+}
+
+.time-row {
+  min-height: 88rpx;
+  border-bottom: 1rpx solid var(--line);
+}
+
+.time-row text:last-child {
+  color: var(--teal);
+}
+
+.save-settings {
+  margin-top: 24rpx;
+}
+
+.maintenance-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16rpx;
+  margin-top: 20rpx;
+}
+
+.danger-button {
+  min-height: 72rpx;
+  margin: 0;
+  padding: 0 20rpx;
+  border: 1rpx solid #d7b3ae;
+  background: #fff;
+  color: var(--danger);
+  font-size: 25rpx;
+  line-height: 70rpx;
+}

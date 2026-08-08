@@ -1,0 +1,37 @@
+<view class="page">
+  <view class="top-band history-head">
+    <view class="eyebrow">执行记录</view>
+    <view class="page-title">学习历史</view>
+    <view class="page-subtitle">{{completedDays}} 天完成 · {{totalDays}} 天已纳入计划</view>
+  </view>
+
+  <scroll-view class="filter-strip" scroll-x enhanced show-scrollbar="false">
+    <view class="filter-row">
+      <button wx:for="{{filters}}" wx:key="key"
+              class="filter-button {{activeFilter === item.key ? 'is-active' : ''}}"
+              data-key="{{item.key}}" bindtap="onFilterTap">{{item.label}}</button>
+    </view>
+  </scroll-view>
+
+  <view class="history-list">
+    <view wx:if="{{days.length === 0}}" class="empty-state">当前筛选下没有记录</view>
+    <button wx:for="{{days}}" wx:key="id" class="day-row" data-date="{{item.date}}" bindtap="onOpenDay">
+      <view class="day-topline">
+        <view>
+          <view class="day-date">{{item.dateLabel}}</view>
+          <view class="day-phase">{{item.phase}}</view>
+        </view>
+        <view class="day-percent">{{item.progressPercent}}%</view>
+      </view>
+      <view class="day-course">{{item.courses}}</view>
+      <view class="day-progress">
+        <view class="day-progress-fill" style="width: {{item.progressPercent}}%;"></view>
+      </view>
+      <view class="day-meta">
+        <text class="status-{{item.status}}">{{item.statusLabel}}</text>
+        <text>{{item.taskSummary}}</text>
+        <text>{{item.actualHours}} / {{item.plannedHours}} 小时</text>
+      </view>
+    </button>
+  </view>
+</view>
