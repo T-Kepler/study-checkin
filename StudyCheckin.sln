@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyCheckin.Core.Tests", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyCheckin.Desktop", "src\windows\StudyCheckin.Desktop\StudyCheckin.Desktop.csproj", "{168E3821-847C-4432-9AC6-618BAEA5A7C8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyCheckin.Desktop.IntegrationTests", "tests\StudyCheckin.Desktop.IntegrationTests\StudyCheckin.Desktop.IntegrationTests.csproj", "{1C2BA117-25C8-467A-9ADD-C21B066CFDF7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,11 +38,16 @@ Global
 		{168E3821-847C-4432-9AC6-618BAEA5A7C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{168E3821-847C-4432-9AC6-618BAEA5A7C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{168E3821-847C-4432-9AC6-618BAEA5A7C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C2BA117-25C8-467A-9ADD-C21B066CFDF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C2BA117-25C8-467A-9ADD-C21B066CFDF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C2BA117-25C8-467A-9ADD-C21B066CFDF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C2BA117-25C8-467A-9ADD-C21B066CFDF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F0333A47-E162-46AA-853D-4309882C9E58} = {A690841A-1637-4ACD-8E3F-FCE9763006A1}
 		{42EB9149-6B10-4427-9964-2DE607824B66} = {F0333A47-E162-46AA-853D-4309882C9E58}
 		{8C8E56B6-0F44-4549-9615-09FD4FB5887C} = {BA4A4C13-3A67-407B-89AA-4EC7F653D896}
 		{168E3821-847C-4432-9AC6-618BAEA5A7C8} = {F0333A47-E162-46AA-853D-4309882C9E58}
+		{1C2BA117-25C8-467A-9ADD-C21B066CFDF7} = {BA4A4C13-3A67-407B-89AA-4EC7F653D896}
 	EndGlobalSection
 EndGlobal

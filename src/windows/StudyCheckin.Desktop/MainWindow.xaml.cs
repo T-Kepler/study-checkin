@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Threading;
 using Microsoft.Win32;
 using StudyCheckin.Core;
@@ -35,7 +36,13 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
         _trayIcon = CreateTrayIcon();
-        _displayTimer.Tick += (_, _) => RenderTasksOnly();
+        _displayTimer.Tick += (_, _) =>
+        {
+            if (_current?.ActiveTask is not null && Keyboard.FocusedElement is not TextBox)
+            {
+                RenderTasksOnly();
+            }
+        };
         _syncTimer.Tick += async (_, _) => await BackgroundTickAsync();
     }
 

@@ -8,6 +8,7 @@
 # Packaged artifacts
 dist/
 publish/
+artifacts/
 
 # WeChat developer-specific files
 src/miniprogram/project.private.config.json
@@ -32,4 +33,3 @@ logs/
 Thumbs.db
 .idea/
 .vscode/
-

@@ -97,7 +97,7 @@
                                         <ColumnDefinition Width="76" />
                                         <ColumnDefinition Width="92" />
                                     </Grid.ColumnDefinitions>
-                                    <CheckBox Grid.Column="0" IsChecked="{Binding IsCompleted}" IsEnabled="{Binding CanInteract}"
+                                    <CheckBox Grid.Column="0" IsChecked="{Binding IsCompleted, Mode=OneWay}" IsEnabled="{Binding CanInteract}"
                                               VerticalAlignment="Center" HorizontalAlignment="Center" Tag="{Binding Id}"
                                               Click="TaskCheck_Click" ToolTip="完成任务" />
                                     <Border Grid.Column="1" Width="3" Background="{Binding CategoryBrush}" CornerRadius="2" />
@@ -107,7 +107,7 @@
                                         <TextBlock Text="{Binding TimerDetail}" Foreground="#7A5A1F" FontSize="11" Margin="0,4,0,0" />
                                     </StackPanel>
                                     <StackPanel Grid.Column="3" Orientation="Horizontal" VerticalAlignment="Center">
-                                        <TextBox Width="42" Text="{Binding ActualMinutes}" TextAlignment="Center" Tag="{Binding Id}"
+                                        <TextBox Width="42" Text="{Binding ActualMinutes, Mode=OneWay}" TextAlignment="Center" Tag="{Binding Id}"
                                                  IsEnabled="{Binding CanInteract}" LostFocus="Minutes_LostFocus" />
                                         <TextBlock Text="分" Foreground="{StaticResource MutedBrush}" VerticalAlignment="Center" Margin="4,0,0,0" />
                                     </StackPanel>
