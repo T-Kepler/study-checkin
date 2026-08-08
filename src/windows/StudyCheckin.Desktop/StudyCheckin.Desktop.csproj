@@ -4,6 +4,10 @@
     <ProjectReference Include="..\StudyCheckin.Core\StudyCheckin.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Resource Include="Assets\app-icon.ico" />
+  </ItemGroup>
+
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
@@ -13,6 +17,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <AssemblyName>StudyCheckin</AssemblyName>
     <RootNamespace>StudyCheckin.Desktop</RootNamespace>
+    <ApplicationIcon>Assets\app-icon.ico</ApplicationIcon>
   </PropertyGroup>
 
 </Project>

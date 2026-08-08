@@ -384,7 +384,8 @@ public partial class MainWindow : Window
 
         var icon = new Forms.NotifyIcon
         {
-            Icon = System.Drawing.SystemIcons.Information,
+            Icon = System.Drawing.Icon.ExtractAssociatedIcon(Environment.ProcessPath ?? string.Empty)
+                ?? System.Drawing.SystemIcons.Information,
             Text = "自律台",
             Visible = true,
             ContextMenuStrip = menu
